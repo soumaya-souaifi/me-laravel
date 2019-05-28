@@ -1,0 +1,41 @@
+version: '2'
+services:
+
+#  laravel_mysql:
+#    container_name: laravel_mysql
+#    image: mysql:5.7.23
+#    restart: always
+#    environment:
+#      MYSQL_DATABASE : database
+#      MYSQL_USER: user
+#      MYSQL_PASSWORD: password
+#      MYSQL_ROOT_PASSWORD: password
+#    volumes:
+#      - .mysql:/var/lib/mysql
+#    network_mode: bridge
+
+  web:
+    container_name: web
+    build: ./docker
+ #   depends_on:
+ #     - laravel_mysql
+    restart: always
+    hostname: my.localhost
+ #   links:
+ #     - laravel_mysql:mysql
+    volumes:
+      - .:/var/www/html
+    environment:
+      VIRTUAL_HOST: my.localhost
+      PHP_VERSION: 7.3
+      APACHE_PUBLIC_DIRECTORY: /var/www/html/public
+      SSMTP_MAILHUB: smtp.provider.tn 
+      SSMTP_MAILHUB_PORT: '25'
+      SSMTP_AUTH_USER: contat@myemail.me
+      SSMTP_AUTH_PASS: 'kjhbkyTYFjkhbk'
+      SSMTP_USE_TLS: 'NO'
+      SSMTP_USE_STARTTLS: 'NO'
+    ports:
+      - 80:80
+      - 5587:587
+    network_mode: bridge
