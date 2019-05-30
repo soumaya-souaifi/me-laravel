@@ -1,10 +1,10 @@
-- hosts: 192.168.1.9
+- hosts: 192.168.1.28
   tasks:
    # - include_vars: login1.yml
     - name: variable d'authentification
       set_fact:
         os_auth:
-          auth_url: http://192.168.1.9:5000/v3/
+          auth_url: http://192.168.1.28:5000/v3/
           username: admin
           password: mind
           project_name: admin
@@ -18,14 +18,14 @@
       os_server:
         state: present
         auth: "{{ os_auth }}"
-        name: vm-jenkins-s
+        name: vm-jenkins-ansible
         image: 'Cloud Ubuntu Server 16.04LTS'
-        key_name: soumaya
+        key_name: rahma
         timeout: 120
         flavor: LARGE
         network: selfservice
         #floating_ip_pools: provider
         floating_ips:
-          - 192.168.1.249
+          - 192.168.1.218
         security_groups: default
         wait: yes
