@@ -18,7 +18,7 @@
       os_server:
         state: present
         auth: "{{ os_auth }}"
-        name: vm-jenkins-ansible
+        name: vm-jenkins-ansible2
         image: 'Cloud Ubuntu Server 16.04LTS'
         key_name: rahma
         timeout: 120
@@ -26,6 +26,6 @@
         network: selfservice
         #floating_ip_pools: provider
         floating_ips:
-          - 192.168.1.218
+          - 192.168.1.244
         security_groups: default
         wait: yes
