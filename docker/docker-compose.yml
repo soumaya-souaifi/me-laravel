@@ -19,5 +19,5 @@ services:
       SSMTP_USE_STARTTLS: 'NO'
     ports:
       - 80:80
-      - 5587:587
+      - 587:587
     network_mode: bridge
