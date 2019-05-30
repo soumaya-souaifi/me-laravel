@@ -1,0 +1,23 @@
+version: '2'
+services:
+  web:
+    container_name: web
+    build: ./docker
+    restart: always
+    hostname: my.localhost
+    volumes:
+      - .:/var/www/html
+    environment:
+      VIRTUAL_HOST: my.localhost
+      PHP_VERSION: 7.3
+      APACHE_PUBLIC_DIRECTORY: /var/www/html
+      SSMTP_MAILHUB: smtp.provider.tn 
+      SSMTP_MAILHUB_PORT: '25'
+      SSMTP_AUTH_USER: contat@myemail.me
+      SSMTP_AUTH_PASS: 'kjhbkyTYFjkhbk'
+      SSMTP_USE_TLS: 'NO'
+      SSMTP_USE_STARTTLS: 'NO'
+    ports:
+      - 80:80
+      - 587:587
+    network_mode: bridge
