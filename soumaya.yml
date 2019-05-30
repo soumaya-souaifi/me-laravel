@@ -19,7 +19,7 @@
         state: present
         auth: "{{ os_auth }}"
         name: vm-jenkins-ansible
-        image: 'ubuntu-16.04'
+        image: 'Cloud Ubuntu Server 16.04LTS'
         key_name: rahma
         timeout: 120
         flavor: LARGE
