@@ -49,4 +49,4 @@
   - name: clonage
     git:
         repo: https://github.com/rahma-mejri/me-laravel.git
-        dest: /home/ubuntu
+        dest: /home/ubuntu/laravel
