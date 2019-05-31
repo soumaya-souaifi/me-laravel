@@ -21,7 +21,7 @@
         name: vm-jenkins-ansible
         image: 'deployement'
         key_name: rahma
-        timeout: 120
+        timeout: 500
         flavor: LARGE
         network: selfservice
         #floating_ip_pools: provider
