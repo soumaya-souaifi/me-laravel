@@ -10,7 +10,7 @@ services:
     environment:
       VIRTUAL_HOST: my.localhost
       PHP_VERSION: 7.3
-      APACHE_PUBLIC_DIRECTORY: /var/www/html
+      APACHE_PUBLIC_DIRECTORY: /var/www/html/public
       SSMTP_MAILHUB: smtp.provider.tn 
       SSMTP_MAILHUB_PORT: '25'
       SSMTP_AUTH_USER: contat@myemail.me
